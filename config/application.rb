@@ -11,6 +11,10 @@ require "sprockets/railtie"
 # you've limited to :test, :development, or :production.
 Bundler.require(:default, Rails.env)
 
+config.generators do |g|
+    g.fixture_replacement :factory_girl
+end
+
 module BankTeller
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
