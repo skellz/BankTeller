@@ -12,7 +12,7 @@ feature 'user signs in' q%{
   # * Clicks on link Sign 
   # * Redirected to account show page
 
-  account = FactoryGilr.build(:account)
+  account = FactoryGirl.build(:account)
 
   visit root_path
   click_link 'Sign In'

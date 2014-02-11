@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140208223531) do
+ActiveRecord::Schema.define(version: 20140210230905) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,5 +33,20 @@ ActiveRecord::Schema.define(version: 20140208223531) do
 
   add_index "accounts", ["name"], name: "index_accounts_on_name", unique: true, using: :btree
   add_index "accounts", ["reset_pin_token"], name: "index_accounts_on_reset_pin_token", unique: true, using: :btree
+
+  create_table "balances", force: true do |t|
+    t.decimal  "balance"
+    t.integer  "name_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "transactions", force: true do |t|
+    t.decimal  "deposit"
+    t.decimal  "withdrawl"
+    t.integer  "balance_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end
