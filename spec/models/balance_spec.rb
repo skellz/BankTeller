@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe Balance do
-  it { should validate_presence_of(:name_id) }
+  #it { should validate_presence_of(:account_id) }
   it { should validate_presence_of(:balance) }
 
   it { should have_many(:transactions) }
