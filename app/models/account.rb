@@ -1,5 +1,5 @@
 class Account < ActiveRecord::Base
-  has_one :balance
+  has_one :balance, dependent: :destroy
   has_many :transactions, through: :balance
 
   validates :email, presence: true, uniqueness: true

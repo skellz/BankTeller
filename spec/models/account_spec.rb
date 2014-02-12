@@ -8,7 +8,7 @@ describe Account do
   it { should_not have_valid(:password).when('11', nil, '') }
 
   describe 'uniquness validations' do
-    Account.delete_all
+    Account.destroy_all
     before(:each) do
       FactoryGirl.create(:account)
     end

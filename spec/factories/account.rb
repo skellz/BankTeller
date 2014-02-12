@@ -6,7 +6,7 @@ FactoryGirl.define do
 
     factory :account_with_balance do 
       after(:create) do |account|
-        create(:balance, balance: account.balance)
+        create(:balance, account_id: account.id)
       end
     end
   end
