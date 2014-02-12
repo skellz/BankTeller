@@ -16,11 +16,20 @@ feature 'user creates an account', %q{
     click_link 'Create Account'
     
     fill_in 'Email', with: "email@email.com"
-    fill_in 'Password', with: "1234" 
-    fill_in 'Password Confirmation', with: "1234"
+    fill_in 'Pin', with: "1234" 
+    fill_in 'Pin Confirmation', with: "1234"
     click_button 'Create Account'
 
     expect(page).to have_content('Account successfully created!')
     expect(page).to have_content('Sign Out')
+  end
+
+  scenario 'user attempts to register with invalid attributes' do 
+    visit root_path
+    click_link 'Create Account'
+
+    click_button 'Create Account'
+    expect(page).to have_content("Email can't be blank")
+    expect(page).to have_content("Password can't be blank")
   end
 end

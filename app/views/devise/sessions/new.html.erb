@@ -4,7 +4,7 @@
   <div><%= f.label :email %><br />
   <%= f.email_field :email, :autofocus => true %></div>
 
-  <div><%= f.label :password %><br />
+  <div><%= f.label :password, 'Pin' %><br />
   <%= f.password_field :password %></div>
 
   <% if devise_mapping.rememberable? -%>
@@ -14,4 +14,4 @@
   <div><%= f.submit "Sign in" %></div>
 <% end %>
 
-<%= render "devise/shared/links" %>
+
