@@ -8,15 +8,15 @@ feature 'user creates and account', q%{
   # ACCEPTANCE CRITERIA
   # * User visits the home page
   # * Clicks on link Create Account 
-  # * Enters Account Name, Pin and Confirmation Pin
+  # * Enters Email, Password and Confirmation Password
   # * Clicks on link Create Account 
   # * Redirected to Account show page
 
   visit root_path
   click_link 'Create Account'
-  fill_in 'Account Name', with: "New Account"
-  fill_in 'Pin', with: "1234" 
-  fill_in 'Pin Confirmation', with: "1234"
+  fill_in 'Email', with: "email@email.com"
+  fill_in 'Password', with: "1234" 
+  fill_in 'Password Confirmation', with: "1234"
   click_link 'Create Account'
 
   expect(page).to have_content('Account successfully created!')

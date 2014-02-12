@@ -8,7 +8,7 @@ feature 'user signs in' q%{
   # ACCEPTANCE CRITERIA
   # * User visits home page
   # * Clicks on link Sign In 
-  # * Enters account name and pin
+  # * Enters email and password
   # * Clicks on link Sign 
   # * Redirected to account show page
 
@@ -16,8 +16,8 @@ feature 'user signs in' q%{
 
   visit root_path
   click_link 'Sign In'
-  fill_in 'Account Name', with: account.name 
-  fill_in 'Pin', with: account.pin
+  fill_in 'Email', with: account.email 
+  fill_in 'Password', with: account.password
   click_link 'Sign In'
 
   expect(page).to have_content('Sign Out')

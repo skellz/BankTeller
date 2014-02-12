@@ -2,12 +2,12 @@ class DeviseCreateAccounts < ActiveRecord::Migration
   def change
     create_table(:accounts) do |t|
       ## Database authenticatable
-      t.string :name,              :null => false, :default => ""
-      t.string :encrypted_pin, :null => false, :default => ""
+      t.string :email,              :null => false, :default => ""
+      t.string :encrypted_password, :null => false, :default => ""
 
       ## Recoverable
-      t.string   :reset_pin_token
-      t.datetime :reset_pin_sent_at
+      t.string   :reset_password_token
+      t.datetime :reset_password_sent_at
 
       ## Rememberable
       t.datetime :remember_created_at
@@ -27,15 +27,15 @@ class DeviseCreateAccounts < ActiveRecord::Migration
 
       ## Lockable
       # t.integer  :failed_attempts, :default => 0, :null => false # Only if lock strategy is :failed_attempts
-      # t.string   :unlock_token # Only if unlock strategy is :name or :both
+      # t.string   :unlock_token # Only if unlock strategy is :email or :both
       # t.datetime :locked_at
 
 
       t.timestamps
     end
 
-    add_index :accounts, :name,                :unique => true
-    add_index :accounts, :reset_pin_token, :unique => true
+    add_index :accounts, :email,                :unique => true
+    add_index :accounts, :reset_password_token, :unique => true
     # add_index :accounts, :confirmation_token,   :unique => true
     # add_index :accounts, :unlock_token,         :unique => true
   end
