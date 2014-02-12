@@ -37,15 +37,15 @@ gem 'devise'
 
 group :test do
  gem 'rspec-rails'
- gem 'capybara'
  gem 'shoulda-matchers'
  gem 'valid_attribute'
- gem 'launchy'
 end
 
 group :test, :development do 
   gem 'pry-rails'
   gem 'factory_girl_rails'
+  gem 'capybara'
+  gem 'launchy'
 end
 
 # Use ActiveModel has_secure_password

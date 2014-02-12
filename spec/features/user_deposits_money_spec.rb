@@ -5,7 +5,7 @@ feature 'user deposits or withdraws money from their account', %q{
   I want to deposit or withdraw money from my account
   So I can keep track of my money
 } do 
-  let(:account) { FactoryGirl.build(:account_with_balance)}
+  let(:account) { FactoryGirl.build(:account)}
   scenario 'user deposits money into account' do
     # ACCEPTANCE CRITERIA
     # * User visits home page
